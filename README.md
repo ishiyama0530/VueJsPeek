@@ -1,5 +1,3 @@
-# vue-support README
-
 ## Features
 
 - peek inside the script tag of vue file on hovering to custom component tag.
