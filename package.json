@@ -5,6 +5,7 @@
   "version": "0.0.1",
   "publisher": "ishiyama",
   "repository": "https://github.com/ishiyama0530/VueJsPeek",
+  "icon": "asset/vue.png",
   "engines": {
     "vscode": "^1.27.0"
   },
