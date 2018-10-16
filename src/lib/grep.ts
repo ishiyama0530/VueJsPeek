@@ -24,6 +24,7 @@ export async function grepAsync(
   const rootPath = getRootPath()
   return globby(patterns, {
     cwd: rootPath,
+    case: false,
     followSymlinkedDirectories: false,
     absolute: option.absolute,
     ignore: ['**/node_modules/**']
@@ -39,6 +40,7 @@ export function grepSync(
   const rootPath = getRootPath()
   return globby.sync(patterns, {
     cwd: rootPath,
+    case: false,
     followSymlinkedDirectories: false,
     absolute: option.absolute,
     ignore: ['**/node_modules/**']

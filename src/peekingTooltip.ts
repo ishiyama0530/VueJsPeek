@@ -15,10 +15,7 @@ export async function createPeekingTooltip(
   const vuePathParsedList = createVuePathParsedList(vueFilePathList)
   const vuePathParsed = vuePathParsedList.find(path => {
     return (
-      hoverText === path.fileName ||
-      voca.kebabCase(hoverText) === path.fileName ||
-      voca.camelCase(hoverText) === path.fileName ||
-      voca.capitalize(voca.camelCase(hoverText)) === path.fileName
+      voca.camelCase(hoverText).toLowerCase() === voca.camelCase(path.fileName).toLowerCase()
     )
   })
 
@@ -43,7 +40,7 @@ export async function createPeekingTooltip(
         return createPeekingTooltipContent([
           {
             title: path,
-            content: `\`\`\`js${scriptText}\`\`\``
+            content: '```js' + '\n' + scriptText + '```'
           }
         ])
       }
@@ -59,13 +56,13 @@ async function getComponentScriptText(
   if (scriptRange) {
     const componentStartPosition = getFirstMatchedPostion(
       document,
-      /@Component/,
+      /export default/,
       scriptRange.start,
       /<\/script>/
     )
     if (componentStartPosition) {
       const componentRange = new vscode.Range(
-        componentStartPosition,
+        componentStartPosition.with(componentStartPosition.line + 1),  // for start export
         scriptRange.end.with(scriptRange.end.line - 1) // remove for </script>
       )
       const compornentText = document.getText(componentRange)
@@ -95,7 +92,7 @@ function createVuePathParsedList(
 }
 
 function findImportedVueFilePathList(document: vscode.TextDocument): string[] {
-  const range = getMatchedRange(/<script/, /@Component/, document)
+  const range = getMatchedRange(/<script/, /export default/, document)
   const text = document.getText(range)
   return voca
     .chain(text)
