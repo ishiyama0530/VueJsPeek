@@ -1,7 +1,12 @@
 # Change Log
+
 All notable changes to the "vuejs-peek" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+## 0.0.2 | 2018-10-16
 
-## [Unreleased]
+- Fixed file name get process.
+- Fixed script text get process.
+
+## 0.0.1 | 2018-10-14
+
 - Initial release
