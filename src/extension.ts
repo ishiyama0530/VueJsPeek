@@ -10,24 +10,30 @@ export function activate(context: vscode.ExtensionContext) {
         document: vscode.TextDocument,
         position: vscode.Position
       ): Promise<vscode.Hover | undefined> {
-        const targetRange = document.getWordRangeAtPosition(
-          position,
-          /<.+?-?.+?(>| )/
-        )
-
-        const targetText = document.getText(targetRange)
-        const formmtedText = targetText
-          .replace('<', '')
-          .replace('>', '')
-          .replace('/', '')
-          .trim()
-
-        if (formmtedText) {
-          return createPeekingTooltip(document, formmtedText)
+        const text = getText(document, position)
+        if (text) {
+          return createPeekingTooltip(document, text)
         } else {
           return new Promise<undefined>(resolve => resolve())
         }
       }
     })
   )
+}
+
+function getText(
+  document: vscode.TextDocument,
+  position: vscode.Position
+): string {
+  const targetRange = document.getWordRangeAtPosition(
+    position,
+    /<.+?-?.+?(>| )/
+  )
+  const targetText = document.getText(targetRange)
+  const formatedText = targetText
+    .replace('<', '')
+    .replace('>', '')
+    .replace('/', '')
+    .trim()
+  return formatedText
 }
