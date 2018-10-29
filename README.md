@@ -10,9 +10,9 @@
 
 See Change Log [here](https://github.com/ishiyama0530/VueJsPeek/blob/master/CHANGELOG.md)
 
-## License
+## Marketplace
 
-Marketplace [here](https://marketplace.visualstudio.com/items?itemName=ishiyama.vuejs-peek)
+See Marketplace [here](https://marketplace.visualstudio.com/items?itemName=ishiyama.vuejs-peek)
 
 ## License
 
