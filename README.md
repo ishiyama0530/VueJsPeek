@@ -8,7 +8,7 @@
 
 ## Change Log
 
-See Change Log [here](https://github.com/ishiyama0530/VueJsPeek/CHANGELOG.md)
+See Change Log [here](https://github.com/ishiyama0530/VueJsPeek/blob/master/CHANGELOG.md)
 
 ## License
 
