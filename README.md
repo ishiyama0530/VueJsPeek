@@ -12,4 +12,8 @@ See Change Log [here](https://github.com/ishiyama0530/VueJsPeek/blob/master/CHAN
 
 ## License
 
+Marketplace [here](https://marketplace.visualstudio.com/items?itemName=ishiyama.vuejs-peek)
+
+## License
+
 MIT © [ishiyama](https://github.com/ishiyama0530)
