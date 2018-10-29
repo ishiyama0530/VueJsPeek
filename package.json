@@ -2,7 +2,7 @@
   "name": "vuejs-peek",
   "displayName": "Vue.js Peek",
   "description": "provide for vue.js support.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "ishiyama",
   "repository": "https://github.com/ishiyama0530/VueJsPeek",
   "icon": "asset/vue.png",
@@ -16,19 +16,6 @@
     "onLanguage:vue"
   ],
   "main": "./out/extension",
-  "contributes": {
-    "configuration": {
-      "type": "object",
-      "title": "Vue.js Peek",
-      "properties": {
-        "vuejsPeek.rootDirectory": {
-          "type": "string",
-          "default": "",
-          "description": "root directory in workspace for file grep. ex) src"
-        }
-      }
-    }
-  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
